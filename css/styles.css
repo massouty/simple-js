@@ -1,0 +1,38 @@
+* {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  
+  body {
+    background-color: #FFF8DC;
+    min-width: 350px;
+    max-width: 1200px;
+  }
+  
+  body {
+    font-family: 'Tiro Bangla', serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.6;
+  }
+  
+  h1 {
+    font-size: 30px;
+    font-weight: bold;
+    text-decoration: underline;
+    text-align: center;
+    color: darkblue;
+  }
+  
+  h2 {
+    font-size: 24px;
+    font-weight: bold;
+    text-decoration: underline;
+  }
+  
+  h3 {
+    font-size: 18px;
+    font-weight: 400;
+    text-decoration: none;
+    color: darkblue;
+  }
