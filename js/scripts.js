@@ -11,3 +11,5 @@ let pokemonlist = [{ name: 'Bulbasaur', height: 0.7, type: ['grass', 'poison'] }
 document.write(pokemonlist);
 
 
+
+
