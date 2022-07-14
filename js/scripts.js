@@ -15,12 +15,13 @@ let pokemonlist = [{ name: 'Bulbasaur', height: 7, type: ['grass', 'poison'] },
     } else { document.write(pokemonlist[i].name + " is big body,wow!/"); }
 }
 */
+// this is for task 1.5 JS
 pokemonlist.forEach(function(pokemon){if (pokemon.height < 8 && pokemon.height > 5) {
     document.write(pokemon.name + " is small body/ ");
 }
 else if (pokemon.height < 11) {
     document.write(pokemon.name + " is normal body/ ");
-} else { document.write(pokemon.name + " is big body,wow!/");}});
+} else { document.write(pokemon.name + " is big body,wow!/");}})();
 
 let pokemon1 = "Bulbasaur(Height:7)";
 document.write(pokemon1);
