@@ -29,3 +29,22 @@ let pokemon2 = "Butterfree(Height:11)-wow , this is big";
 document.write(pokemon2);
 let pokemon3 = "machop(Height:7)";
 document.write(pokemon3);
+
+let pokemonRepository = (function () {
+    let pokemonList = [{ name: 'Bulbasaur', height: 7, type: ['grass', 'poison'] },
+    { name: 'Butterfree', height: 11, type: ['grass', 'bug', 'flying'] },
+    { name: 'machop', height: 8, type: ['fighting', 'bug', 'grass'] }]; 
+  
+    return {
+      add: function(pokemon) {
+        pokemonList.push(pokemon);
+      },
+      getAll: function() {
+        return pokemonList;
+      }
+    };
+  })();
+  
+  console.log(pokemonRepository.getAll());
+  pokemonRepository.add({ name: 'Lola' });
+  console.log(pokemonRepository.getAll()); 
