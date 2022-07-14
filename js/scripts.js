@@ -16,12 +16,14 @@ let pokemonlist = [{ name: 'Bulbasaur', height: 7, type: ['grass', 'poison'] },
 }
 */
 // this is for task 1.5 JS
-pokemonlist.forEach(function(pokemon){if (pokemon.height < 8 && pokemon.height > 5) {
-    document.write(pokemon.name + " is small body/ ");
-}
-else if (pokemon.height < 11) {
-    document.write(pokemon.name + " is normal body/ ");
-} else { document.write(pokemon.name + " is big body,wow!/");}})();
+pokemonlist.forEach(function (pokemon) {
+    if (pokemon.height < 8 && pokemon.height > 5) {
+        document.write(pokemon.name + " is small body/ ");
+    }
+    else if (pokemon.height < 11) {
+        document.write(pokemon.name + " is normal body/ ");
+    } else { document.write(pokemon.name + " is big body,wow!/"); }
+})();
 
 let pokemon1 = "Bulbasaur(Height:7)";
 document.write(pokemon1);
@@ -33,18 +35,18 @@ document.write(pokemon3);
 let pokemonRepository = (function () {
     let pokemonList = [{ name: 'Bulbasaur', height: 7, type: ['grass', 'poison'] },
     { name: 'Butterfree', height: 11, type: ['grass', 'bug', 'flying'] },
-    { name: 'machop', height: 8, type: ['fighting', 'bug', 'grass'] }]; 
-  
+    { name: 'machop', height: 8, type: ['fighting', 'bug', 'grass'] }];
+
     return {
-      add: function(pokemon) {
-        pokemonList.push(pokemon);
-      },
-      getAll: function() {
-        return pokemonList;
-      }
+        add: function (pokemon) {
+            pokemonList.push(pokemon);
+        },
+        getAll: function () {
+            return pokemonList;
+        }
     };
-  })();
-  
-  console.log(pokemonRepository.getAll());
-  pokemonRepository.add({ name: 'Lola' });
-  console.log(pokemonRepository.getAll()); 
+})();
+
+console.log(pokemonRepository.getAll());
+pokemonRepository.add({ name: 'Lola' });
+console.log(pokemonRepository.getAll()); 
