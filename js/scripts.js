@@ -23,7 +23,7 @@ pokemonlist.forEach(function (pokemon) {
     else if (pokemon.height < 11) {
         document.write(pokemon.name + " is normal body/ ");
     } else { document.write(pokemon.name + " is big body,wow!/"); }
-})();
+});
 
 let pokemon1 = "Bulbasaur(Height:7)";
 document.write(pokemon1);
@@ -50,3 +50,5 @@ let pokemonRepository = (function () {
 console.log(pokemonRepository.getAll());
 pokemonRepository.add({ name: 'Lola' });
 console.log(pokemonRepository.getAll()); 
+
+// Dom task in js
