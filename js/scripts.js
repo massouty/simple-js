@@ -52,3 +52,39 @@ pokemonRepository.add({ name: 'Lola' });
 console.log(pokemonRepository.getAll()); 
 
 // Dom task in js
+
+function addListItem(pokemon){
+    let pokemonList = document.querySelector(".pokemon-list");
+    let listpokemon = document.createElement("li");
+    let button = document.createElement("button");
+    button.innerText = pokemon.name;
+    button.classList.add("button1");
+    listpokemon.appendChild(button);
+    pokemonList.appendChild(listpokemon);
+  }
+ 
+
+  listItem.appendChild(button);
+  pokemonList.appendChild(listItem);
+  eventListener(button, pokemon);
+
+
+function eventListener (button, pokemon){
+  button.addEventListener("click", function(){
+      showDetails(pokemon);
+  });
+}
+function showDetails(item) {
+  pokemonRepository.loadDetails(item).then(function () {
+      showModal(item);
+  });
+}
+
+
+pokemonRepository.add({ name: "Pikachu", height: 0.3, types: ["electric"] });
+
+console.log(pokemonRepository.getAll());
+
+pokemonRepository.getAll().forEach(function (pokemon) {
+  pokemonRepository.addListItem(pokemon);
+});
