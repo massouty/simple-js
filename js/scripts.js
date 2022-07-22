@@ -7,22 +7,22 @@ let pokemonlist = [{ name: 'Bulbasaur', height: 7, type: ['grass', 'poison'] },
 { name: 'machop', height: 8, type: ['fighting', 'bug', 'grass'] }];
 
 for (let i = 0; i < pokemonlist.length; i++) {
-    if (pokemonlist[i].height < 8 && pokemonlist[i].height > 5) {
-        document.write(pokemonlist[i].name + " is small body/ ");
-    }
-    else if (pokemonlist[i].height < 11) {
-        document.write(pokemonlist[i].name + " is normal body/ ");
-    } else { document.write(pokemonlist[i].name + " is big body,wow!/"); }
+  if (pokemonlist[i].height < 8 && pokemonlist[i].height > 5) {
+    document.write(pokemonlist[i].name + " is small body/ ");
+  }
+  else if (pokemonlist[i].height < 11) {
+    document.write(pokemonlist[i].name + " is normal body/ ");
+  } else { document.write(pokemonlist[i].name + " is big body,wow!/"); }
 }
 
 // this is for task 1.5 JS
 pokemonlist.forEach(function (pokemon) {
-    if (pokemon.height < 8 && pokemon.height > 5) {
-        document.write(pokemon.name + " is small body/ ");
-    }
-    else if (pokemon.height < 11) {
-        document.write(pokemon.name + " is normal body/ ");
-    } else { document.write(pokemon.name + " is big body,wow!/"); }
+  if (pokemon.height < 8 && pokemon.height > 5) {
+    document.write(pokemon.name + " is small body/ ");
+  }
+  else if (pokemon.height < 11) {
+    document.write(pokemon.name + " is normal body/ ");
+  } else { document.write(pokemon.name + " is big body,wow!/"); }
 });
 
 let pokemon1 = "Bulbasaur(Height:7)";
@@ -67,7 +67,7 @@ let pokemonRepository = (function () {
   function getAll() {
     return repository;
   }
-  function addListItem(pokemon){
+  function addListItem(pokemon) {
     let pokemonList = document.querySelector(".pokemon-list");
     let listpokemon = document.createElement("li");
     let button = document.createElement("button");
@@ -76,23 +76,24 @@ let pokemonRepository = (function () {
     listpokemon.appendChild(button);
     pokemonList.appendChild(listpokemon);
     button.addEventListener('click', function (pokemon) {
-      showDetails(pokemon)});
+      showDetails(pokemon)
+    });
   }
- 
+
   function showDetails(pokemon) {
     console.log(pokemon);
   }
- 
+
 
 
   return {
     add: add,
     getAll: getAll,
     addListItem: addListItem
-    
-   
-  } 
-  
+
+
+  }
+
 })();
 pokemonRepository.add({ name: "Pikachu", height: 0.3, types: ["electric"] });
 
