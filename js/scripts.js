@@ -75,15 +75,14 @@ let pokemonRepository = (function () {
     button.classList.add("button1");
     listpokemon.appendChild(button);
     pokemonList.appendChild(listpokemon);
+    button.addEventListener('click', function (pokemon) {
+      showDetails(pokemon)});
   }
+ 
   function showDetails(pokemon) {
     console.log(pokemon);
   }
-  let button = document.querySelector('button')
-  function eventListener (button, pokemon){
-    button.addEventListener("click", function(pokemon){
-      showDetails(pokemon) ;
-    })}
+ 
 
 
   return {
