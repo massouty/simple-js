@@ -78,11 +78,12 @@ let pokemonRepository = (function () {
 })();
 pokemonRepository.add({ name: "Pikachu", height: 0.3, types: ["electric"] });
 
-console.log(pokemonRepository.getAll());
+//console.log(pokemonRepository.getAll());
 
-pokemonRepository.getAll().forEach(function (pokemon) {
-  pokemonRepository.addListItem(pokemon);
-});
+//pokemonRepository.getAll().forEach(function (pokemon) {
+  //pokemonRepository.addListItem(pokemon);
+
+//});
 
  pokemonRepository = (function () {
   let pokemonList = [];
@@ -113,7 +114,7 @@ pokemonRepository.getAll().forEach(function (pokemon) {
 })();
 
 pokemonRepository.loadList().then(function() {
-  // Now the data is loaded!
+
   pokemonRepository.getAll().forEach(function(pokemon){
     pokemonRepository.addListItem(pokemon);
   });
