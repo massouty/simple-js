@@ -31,26 +31,12 @@ let pokemon2 = "Butterfree(Height:11)-wow , this is big";
 document.write(pokemon2);
 let pokemon3 = "machop(Height:7)";
 document.write(pokemon3);
+// this is task 1.6 , where make some changing for task 1.7, 
+//therefore, I delet code for task 1.6  to avoid any conflect 
+//and rebuild for task 1.7
 
-
-let pokemonRepository = (function () {
-  let repository = [
-    {
-      name: "Bulbasaur",
-      height: 0.7,
-      types: ["grass", "poison"],
-    },
-    {
-      name: "Charizard",
-      height: 1.7,
-      types: ["fire", "flying"],
-    },
-    {
-      name: "Squirtle",
-      height: 1,
-      types: ["water"],
-    },
-  ];
+/*let pokemonRepository = (function () {
+  let repository = [ ];
 
   function add(pokemon) {
     if (
@@ -96,5 +82,72 @@ console.log(pokemonRepository.getAll());
 
 pokemonRepository.getAll().forEach(function (pokemon) {
   pokemonRepository.addListItem(pokemon);
+});*/
+
+let pokemonRepository = (function () {
+  let repository = [ ];
+  let apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=150';
+
+  function add(pokemon) {
+    if (
+      typeof pokemon === "object" &&
+      "name" in pokemon &&
+      "height" in pokemon &&
+      "types" in pokemon
+    ) {
+      repository.push(pokemon);
+    } else {
+      console.log("pokemon is not correct");
+    }
+  }
+  function getAll() {
+    return repository;
+  }
+  function addListItem(pokemon) {
+    let pokemonList = document.querySelector(".pokemon-list");
+    let listpokemon = document.createElement("li");
+    let button = document.createElement("button");
+    button.innerText = pokemon.name;
+    button.classList.add("button1");
+    listpokemon.appendChild(button);
+    pokemonList.appendChild(listpokemon);
+    button.addEventListener('click', function()
+    {showDetails(pokemon)});
+  }
+  function loadDetails(item) {
+    let url = item.detailsUrl;
+    return fetch(url).then(function (response) {
+      return response.json();
+    }).then(function (details) {
+      // Now we add the details to the item
+      item.imageUrl = details.sprites.front_default;
+      item.height = details.height;
+      item.types = details.types;
+    }).catch(function (e) {
+      console.error(e);
+    });
+  }
+  
+  function showDetails(item) {
+    pokemonRepository.loadDetails(item).then(function () {
+      console.log(item);
+    });
+  }
+
+  return {
+    add: add,
+    getAll: getAll,
+    addListItem: addListItem,
+    loadDetails: loadDetails,
+    showDetails: showDetails
+  }
+
+})();
+pokemonRepository.add({ name: "Pikachu", height: 0.3, types: ["electric"] });
+
+pokemonRepository.loadList().then(function () {
+  pokemonRepository.getAll().forEach(function (pokemon) {
+    pokemonRepository.addListItem(pokemon);
+  });
 });
 
