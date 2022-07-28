@@ -150,8 +150,8 @@ let pokemonRepository = (function () {
       console.log(item);
     });
   }
- 
-  
+
+
 
   return {
     add: add,
@@ -160,64 +160,64 @@ let pokemonRepository = (function () {
     loadList: loadList,
     loadDetails: loadDetails,
     showDetails: showDetails
-    
+
   };
 })();
 
-(function() {
-  
+(function () {
+
   let modalContainer = document.querySelector('#modal-container');
   let modalButton = document.querySelector('#show-modal');
   function showModal(pokemon) {
 
     modalContainer.innerHTML = '';
-  
+
     let modal = document.createElement('div');
     modal.classList.add('modal');
-  
+
     let closeButtonElement = document.createElement('button');
     closeButtonElement.classList.add('modal-close');
     closeButtonElement.innerText = 'Close';
     closeButtonElement.addEventListener('click', hideModal);
-  
+
     let titleElement = document.createElement('h1');
     titleElement.innerText = "BULBASAUR";
 
     let contentElement = document.createElement('p');
     contentElement.innerText = `Height: ${pokemon.height}`;
-  
+
     let imgElement = document.createElement('img');
     imgElement.classList.add('img-element');
     imgElement.src = 'https://i.etsystatic.com/25179969/r/il/50222f/3122973749/il_794xN.3122973749_4927.jpg';
-  
+
     modal.appendChild(closeButtonElement);
     modal.appendChild(titleElement);
     modal.appendChild(imgElement);
     modal.appendChild(contentElement);
     modalContainer.appendChild(modal);
-  
+
     modalContainer.classList.add('is-visible');
   }
-  
+
   function hideModal() {
     modalContainer.classList.remove('is-visible');
   }
-  
+
   window.addEventListener('keydown', (e) => {
     if (e.key === 'Escape' && modalContainer.classList.contains('is-visible')) {
       hideModal();
     }
   });
-  
+
   modalContainer.addEventListener('click', (e) => {
     let target = e.target;
     if (target === modalContainer) {
       hideModal();
     }
-  
+
   });
   modalButton.addEventListener('click', pokemon => {
-     showModal(pokemon);
+    showModal(pokemon);
   });
 
 })();
