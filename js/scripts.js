@@ -167,7 +167,7 @@ let pokemonRepository = (function () {
 (function() {
   
   let modalContainer = document.querySelector('#modal-container');
-
+  let modalButton = document.querySelector('#show-modal');
   function showModal(pokemon) {
 
     modalContainer.innerHTML = '';
@@ -181,13 +181,14 @@ let pokemonRepository = (function () {
     closeButtonElement.addEventListener('click', hideModal);
   
     let titleElement = document.createElement('h1');
-    titleElement.innerText = pokemon.name;
+    titleElement.innerText = "BULBASAUR";
+
     let contentElement = document.createElement('p');
     contentElement.innerText = `Height: ${pokemon.height}`;
   
     let imgElement = document.createElement('img');
     imgElement.classList.add('img-element');
-    imgElement.src = pokemon.imageUrl;
+    imgElement.src = 'https://i.etsystatic.com/25179969/r/il/50222f/3122973749/il_794xN.3122973749_4927.jpg';
   
     modal.appendChild(closeButtonElement);
     modal.appendChild(titleElement);
@@ -215,8 +216,8 @@ let pokemonRepository = (function () {
     }
   
   });
-  document.querySelector('#show-modal').addEventListener('click', () => {
-    return showModal(pokemon);
+  modalButton.addEventListener('click', pokemon => {
+     showModal(pokemon);
   });
 
 })();
