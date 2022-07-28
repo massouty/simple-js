@@ -416,8 +416,8 @@
   }
   
   .modal img {
-    height: 100;
-    width: auto;
+    height:100px;
+    width: 100px;
   }
   
   #modal-container {
