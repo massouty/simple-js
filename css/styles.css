@@ -431,16 +431,17 @@ th {
 }
 
 .pokemonButton {
-  background-color: #FFd700;
+  background-color: #cc9900;
   border: none;
-  color: yellow;
-  padding:  16px 32px;
+  color: rgb(245, 238, 241);
+  padding:25px;
+  border-radius:3px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 16px;
+  font-size: 24px;
   margin: 4px 2px;
   cursor: pointer;
-  color: black;
+  color: rgb(250, 246, 246);
   border: 2px solid #0000ff;
 }
