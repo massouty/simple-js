@@ -390,7 +390,7 @@ th {
 
 .modal {
   margin: auto;
-  display: flex;
+  display: none;
   justify-content: space-between;
   box-sizing: border-box;
   background: rgb(133, 138, 201);
