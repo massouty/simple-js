@@ -146,14 +146,7 @@ th {
   flex-grow: 1;
 }
 
-.nav-page {
-  text-align: center;
-  width: auto;
-  margin: 0 auto;
-  font-size: 24px;
-  padding: 5px;
-  font-weight: bold;
-}
+
 
 .pokemon-list {
   text-align: center;
